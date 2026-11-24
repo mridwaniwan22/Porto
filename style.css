@@ -705,7 +705,7 @@ img {
   position: absolute;
   left: 15.4%;
   top: 17.8%;
-  width: 60.9%;
+  width: 60.2%;
   height: 66.4%;
   z-index: 4;
 }
@@ -1031,10 +1031,10 @@ img {
 
 .polaroid-card {
   position: absolute;
-  left: 61.5%;
-  top: 39.5%;
+  left: 65.5%;
+  top: 43.5%;
   margin: 0;
-  width: 33.5%;
+  width: 30.5%;
   aspect-ratio: 1 / 1;
   z-index: 5;
   pointer-events: none;
