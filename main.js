@@ -330,11 +330,13 @@ function renderBookFlipPixelFrame(canvas, stepIndex, totalSteps) {
     ctx.fillStyle = '#C9C9C7';
     ctx.fillRect(boxX, boxY, boxW, boxH);
 
-    // Grey Case Study pill placeholder inside bottom of grid
-    const pillW = Math.round(gw * 0.38);
-    const pillH = Math.max(6, Math.round(gh * 0.11));
+    // Grey placeholder bars for project title, years, and Case Study pill
+    const pillW = Math.round(pw * 0.28);
+    const pillH = Math.max(5, Math.round(ph * 0.045));
     ctx.fillStyle = placeholderGrey;
-    ctx.fillRect(gx + Math.round((gw - pillW) * 0.5), gy + gh - pillH - Math.round(gh * 0.06), pillW, pillH);
+    ctx.fillRect(px + Math.round(pw * 0.22), py + Math.round(ph * 0.142), Math.round(pw * 0.56), 7);
+    ctx.fillRect(px + Math.round(pw * 0.34), py + Math.round(ph * 0.243), Math.round(pw * 0.32), 3);
+    ctx.fillRect(px + Math.round(pw * 0.95) - pillW, py + Math.round(ph * 0.298), pillW, pillH);
 
     ctx.restore();
 
@@ -1291,10 +1293,6 @@ document.addEventListener('DOMContentLoaded', () => {
     yearsEl.className = 'paper-years';
     yearsEl.textContent = project.years;
 
-    const codeEl = document.createElement('span');
-    codeEl.className = 'paper-code';
-    codeEl.textContent = project.code;
-
     const gridPanelEl = document.createElement('div');
     gridPanelEl.className = 'paper-grid-panel';
 
@@ -1312,10 +1310,9 @@ document.addEventListener('DOMContentLoaded', () => {
     caseStudyBtn.textContent = '▶ Case Study';
 
     gridPanelEl.appendChild(mainSlotEl);
-    gridPanelEl.appendChild(caseStudyBtn);
     liveOverlay.appendChild(titleEl);
     liveOverlay.appendChild(yearsEl);
-    liveOverlay.appendChild(codeEl);
+    liveOverlay.appendChild(caseStudyBtn);
     liveOverlay.appendChild(gridPanelEl);
 
     const foldBtn = document.createElement('button');
